@@ -11,9 +11,19 @@
 |
 */
 
-/*Route::get('/', function () {
-   // return view('welcome');
+/* 8-1
+Route::get('/', function () {
+   return view('index');
+}); */
+
+/* 8-2
+Route::get('/', function() {
+    return view('posts/index');
 });
 */
 
+/* 8-1
 Route::get('/posts', 'PostController@index');
+*/
+
+Route::get('/', 'PostController@index');
