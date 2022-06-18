@@ -26,4 +26,5 @@ Route::get('/', function() {
 Route::get('/posts', 'PostController@index');
 */
 
-Route::get('/', 'PostController@index'); //PostController.phpのindex()を呼び出してる
+Route::get('/', 'PostController@index'); //PostController.phpのindex()を呼び出してる,一覧を表示できる
+Route::get('/posts/{post}', 'PostController@show');  //動画の説明だとこれがあった,特定の記事だけ表示するためにshowメソッドを利用する
