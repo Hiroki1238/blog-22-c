@@ -12,6 +12,8 @@
     </head>
     
     <body>
+        <h1>Blog Name<h1> <!--動画見て追加した記述-->
+        <p class="edit">[<a href="/posts/{{ $post->id }}/edit">edit</a>]</p>
         <h1 class="title">
             {{ $post->title }}
         </h1>
