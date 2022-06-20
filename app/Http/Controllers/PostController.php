@@ -12,6 +12,11 @@ class PostController extends Controller
       $post = new Post;
        //return $post->get();
        return view('posts/index')->with(['posts' => $post->getPaginateByLimit()]); 
-   }                                     //↑index.brade.phpの16行目のposts
+   }    //↑index.brade.phpの16行目のposts
+   
+   public function show(Post $post)
+   {
+    return view('posts/show')->with(['post' => $post]);
+   }
    
 }
