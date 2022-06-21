@@ -14,6 +14,7 @@ class PostController extends Controller
 
     public function show(Post $post)
     {
+        //dd($post);
         return view('posts/show')->with(['post' => $post]);
     }
 
@@ -26,6 +27,10 @@ class PostController extends Controller
     {
         $input = $request['post'];
         $post->fill($input)->save();
+        //dd($input);
+        /* $post->title = $input['title'];
+        $post->body= $input['body'];
+        $post->save(); */
         return redirect('/posts/' . $post->id);
     }
     
@@ -37,9 +42,16 @@ class PostController extends Controller
     public function update(PostRequest $request, Post $post)
     {
     $input_post = $request['post'];
-    $post->fill($input_post)->save();
+    //dd($input_post);
+    //$post->fill($input_post)->save(); //filableはfillを使うために書かれてる
 
     return redirect('/posts/' . $post->id);
+    }
+    
+    public function delete(Post $post)
+    {
+    $post->delete();
+    return redirect('/');
     }
 
 }
