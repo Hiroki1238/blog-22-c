@@ -20,11 +20,10 @@
                     <h2 class='title'>{{ $post->title }}</h2>
                     </a>
                     
-                    <a href='/categories/{{ $post->category->id }}'>{{ $post->category->name }}</a> <!-- 9-2 -->
+                    <a href='/categories/{{ $post->category->id }}'>{{ $post->category->name }}</a> <!--9-2-->
                     
                     <p class='body'>{{ $post->body }}</p>
                     
-                     <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
                 </div>
                 
                 <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
