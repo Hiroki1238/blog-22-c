@@ -11,9 +11,18 @@
             @csrf
             
             <div class="title">
-                <h2>Title</h2>           //getLimitの所のpostとは違う、requestのところで使われてるのがこれ
+                <h2>Title</h2>           <!-- getLimitの所のpostとは違う、requestのところで使われてるのがこれ -->
                 <input type="text" name="post[title]" placeholder="タイトル" value="{{ old('post.title') }}"/>
                 <p class="title__error" style="color:red">{{ $errors->first('post.title') }}</p>
+            </div>
+            
+            <div class="category">  <!--9-2-->
+                <h2>Category</h2>
+                <select name="post[category_id]">
+                    @foreach($categories as $category)
+                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @endforeach
+                </select>
             </div>
             
             <div class="body">
@@ -24,6 +33,8 @@
             
             <input type="submit" value="保存"/>
         </form>
+        
+        
         <div class="back">[<a href="/">back</a>]</div>
     </body>
 </html>

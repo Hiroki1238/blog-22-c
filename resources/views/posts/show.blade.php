@@ -13,17 +13,12 @@
     
     <body>
         <h1>Blog Name<h1> <!--動画見て追加した記述-->
-        <p class="edit">[<a href="/posts/{{ $post->id }}/edit">edit</a>]</p>
-        
-        <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
-       @csrf
-       @method('DELETE')
-       <button type="submit">delete</button> 
-       </form>
         
         <h1 class="title">
-            {{ $post->title }}
+            {{ $post->title }} //controllerで宣言した文字列をbladeでは変数として使える
         </h1>
+        
+        <p class="edit">[<a href="/posts/{{ $post->id }}/edit">edit</a>]</p>
         
         <div class="content">
             <div class="content__post">
@@ -34,6 +29,7 @@
         </div>
         
         <div class="footer">
+            <a href="">{{ $post->category->name }}</a><br>  <!-- 9-2 -->
             <a href="/">戻る</a>
         </div>
         
