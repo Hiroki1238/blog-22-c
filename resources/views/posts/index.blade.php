@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -11,6 +14,7 @@
    </head>
     
     <body>
+        {{Auth::user()->name}}
         <h1>Blog Name</h1>
         <p class = 'create'>[<a href='/posts/create'>create</a>]</p>
         <div class='posts'>
@@ -39,3 +43,4 @@
         </div>  <!--↑16行目のposts-->
     </body>
 </html>
+@endsection

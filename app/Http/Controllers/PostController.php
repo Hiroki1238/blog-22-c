@@ -10,7 +10,9 @@ class PostController extends Controller
 {
     public function index(Post $post)
     {
+        //dd(app()->getLocale());
         //$post = new Post();
+        //print("3333333");
         return view('posts/index')->with(['posts' => $post->getPaginateByLimit()]);
     }                                     /*index.blade.phpの16行めのposts*/
 

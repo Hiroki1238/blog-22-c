@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <!DOCTYPE HTML>
 <html lang="{{ str_replace("_", "-", app()->getLocale()) }}">
     <head>
@@ -15,7 +18,7 @@
         <h1>Blog Name<h1> <!--動画見て追加した記述-->
         
         <h1 class="title">
-            {{ $post->title }} //controllerで宣言した文字列をbladeでは変数として使える
+            {{ $post->title }} <!--controllerで宣言した文字列をbladeでは変数として使える-->
         </h1>
         
         <p class="edit">[<a href="/posts/{{ $post->id }}/edit">edit</a>]</p>
@@ -35,3 +38,4 @@
         
     </body>
 </html>
+@endsection

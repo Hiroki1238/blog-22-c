@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -20,7 +23,7 @@
                     <h2 class='title'>{{ $post->title }}</h2>
                     </a>
                     
-                    <a href='/categories/{{ $post->category->id }}'>{{ $post->category->name }}</a> <!--9-2-->
+                    <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a> <!--9-2-->
                     
                     <p class='body'>{{ $post->body }}</p>
                     
@@ -38,3 +41,4 @@
         </div>  <!--↑16行目のposts-->
     </body>
 </html>
+@endsection
